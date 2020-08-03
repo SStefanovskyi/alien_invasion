@@ -7,7 +7,6 @@ from ship import Ship
 
 class AlienInvasion:
     #Клас для управления ресурсами и поведением игры
-
     def __init__(self):
         #Инициализирует игру и создает игровые ресурсы
         pygame.init()
@@ -17,7 +16,7 @@ class AlienInvasion:
             (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
 
-        self.ship = Ship(screen)
+        self.ship = Ship(self)
 
         #Назначение цвета фона
         self.bg_color = (230, 230, 230)
@@ -46,4 +45,3 @@ if __name__ == '__main__':
     #Создание экземпляра и запуск игры
     ai = AlienInvasion()
     ai.run_game()
-
