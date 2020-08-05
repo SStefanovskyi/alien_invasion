@@ -16,11 +16,14 @@ class Ship():
 
         #флаг перемещения
         self.moving_right = False
+        self.moving_left = False
 
     def update(self):
         #Обновляет позицию корабля с учетом флага
         if self.moving_right:
             self.rect.x +=1
+        if self.moving_left:
+            self.rect.x -=1
 
     def blitme(self):
         # Рисует корабль в текущей позиции
