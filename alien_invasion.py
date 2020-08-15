@@ -36,6 +36,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
 
     def _create_fleet(self):
@@ -100,6 +101,10 @@ class AlienInvasion:
         if len(self.bullets) < self.settings.bullets_allowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
+
+    def _update_aliens(self):
+        '''Обновляет позиции всех пришельцев во флоте'''
+        self.aliens.update()
 
     def _update_bullets(self):
         '''Обновляет позиции снарядов и уничтожает старые снаряды'''
