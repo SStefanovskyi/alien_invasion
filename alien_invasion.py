@@ -87,6 +87,10 @@ class AlienInvasion:
         self._check_fleet_edges()
         self.aliens.update()
 
+        #Проверка колизий "пришелец - корабль"
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            print("Ship hit!!!")
+
     def _check_events(self):
         #Отрабатывает нажатия клавиш и события мыши
         for event in pygame.event.get():
