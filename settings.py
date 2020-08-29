@@ -10,6 +10,7 @@ class Settings():
 
         #настройки корабля
         self.ship_speed = 1.5
+        self.ship_limit = 3
 
         #Настройки пришельцев
         self.alien_speed = 1
