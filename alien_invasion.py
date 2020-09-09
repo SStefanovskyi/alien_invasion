@@ -43,6 +43,7 @@ class AlienInvasion:
         #Запуск игрового цикла игры
         while True:
             self._check_events()
+
             if self.stats.game_active:
                 self.ship.update()
                 self._update_bullets()
@@ -83,7 +84,7 @@ class AlienInvasion:
         '''Обрабатывает столкновение корабля с пришельцем'''
         if self.stats.ships_left > 0:
             #Уменьшение ships_left
-            self.stats.ships_left -=1
+            self.stats.ships_left -= 1
 
             #Очистка списков пришельцев и снарядов
             self.aliens.empty()
@@ -148,7 +149,8 @@ class AlienInvasion:
 
     def _check_play_button(self, mouse_pos):
         '''Запускает новую игру при нажатии кнопки Play'''
-        if self.play_button.rect.collidepoint(mouse_pos):
+        button_clicked = self.play_button.rect.collidepoint(mouse_pos)
+        if button_clicked and not self.stats.game_active:
             #Сброс игровой статистики
             self.stats.reset_stats()
             self.stats.game_active = True
