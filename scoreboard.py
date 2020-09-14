@@ -8,7 +8,7 @@ class Scoreboard():
         """Инициализирует атрибуты подсчета очков"""
         self.screen = ai_game.screen
         self.screen_rect = self.screen.get_rect()
-        self.settings = ai_game.settigs
+        self.settings = ai_game.settings
         self.stats = ai_game.stats
 
         # Настройки шрифта для вывода счета
